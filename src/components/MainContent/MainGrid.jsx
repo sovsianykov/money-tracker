@@ -6,22 +6,22 @@ const MainGrid = () => {
     return (
         <div className='main-grid'>
             <Row>
-                <Col xs={4} md={3}>
+                <Col  md={3}>
                     <div className="box">
                         <FilterWrapper/>
                     </div>
                 </Col>
-                <Col xs={4} md={3}>
+                <Col  md={3}>
                     <div className="box">
                         <FilterWrapper/>
                     </div>
                 </Col>
-                <Col xs={4} md={3}>
+                <Col  md={3}>
                     <div className="box">
                         <FilterWrapper/>
                     </div>
                 </Col>
-                <Col xs={4} md={3}>
+                <Col  md={3}>
                     <div className="box">
                         <FilterWrapper/>
                     </div>

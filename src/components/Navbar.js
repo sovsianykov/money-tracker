@@ -2,7 +2,7 @@ import React from 'react';
 import { Navbar ,Nav, NavDropdown, FormControl,Button,Form} from "react-bootstrap";
 const NavbarMain = () => {
     return (
-        <>
+
             <Navbar bg="light" expand="lg">
                 <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -24,7 +24,6 @@ const NavbarMain = () => {
                     </Form>
                 </Navbar.Collapse>
             </Navbar>
-        </>
     );
 };
 

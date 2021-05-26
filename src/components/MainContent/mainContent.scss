@@ -12,6 +12,51 @@
     border: 1px solid transparent;
     border-radius: 5px;
     background: #fff;
+    display: flex;
+    .filter-input {
+      width: 80%;
+      height: 40px;
+      border: none;
+      padding: 0 10px;
+      color: #606060;
+      font-size: 18px;
+      letter-spacing: .1rem;
+      line-height: 30px;
+      &:focus {
+        outline-color: #f6f6f6;
+        box-shadow: none;
+      }
+    }
+    .filterBtn {
+      width: 20%;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #373636;
+      line-height: 30px;
+      cursor: pointer;
+      .pic-colder {
+        width: 40%;
+        height: 60%;
+        opacity: .7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: .3s ease-out;
+        &:hover {
+          opacity: 1;
+        }
+        img {
+          display: block;
+          width: 90%;
+          height: 120%;
+
+        }
+      }
+    }
+
 
   }
 
