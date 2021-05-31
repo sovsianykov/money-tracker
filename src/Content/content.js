@@ -11,6 +11,6 @@ export const expenses = [
     { id :10 , name : 'Leo', item : 'toy' , cost : 400, category :'toys' },
     { id :11 , name : 'Seva',  item : 'shirt' ,cost : 150, category :'wear' },
     { id :12 , name : 'Serhii', item : 'ticket' , cost : 100, category :'transport' },
-    { id :13 , name : 'Serhii', item : 't-shirt' , cost : 100, category :'wear' },
+    { id :13 , name : 'Serhii', item : 'shirt' , cost : 100, category :'wear' },
     { id :14 , name : 'Serhii', item : 'boots' , cost : 100, category :'wear' }
 ]

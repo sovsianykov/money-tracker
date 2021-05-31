@@ -6,6 +6,7 @@ import GridTitle from "../GridTitle";
 import ExpenseList from "./Expense-list";
 import ExpenseItem from "./ExpenseItem";
 import {expenses} from "../../Content/content";
+import {Button} from "bootstrap";
 
 const MainGrid = () => {
     return (

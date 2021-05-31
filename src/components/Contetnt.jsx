@@ -9,8 +9,6 @@ const PageContent = () => {
         <div>
              <Title/>
              <Navbar/>
-
-
         </div>
     );
 };

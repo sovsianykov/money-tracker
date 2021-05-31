@@ -1,21 +1,23 @@
 import React from 'react';
-import { Navbar ,Nav, NavDropdown, FormControl,Button,Form} from "react-bootstrap";
+import {Navbar, Nav, NavDropdown, FormControl, Button, Form, NavLink} from "react-bootstrap";
+import './styles.scss'
+import { Link } from  "react-router-dom"
 const NavbarMain = () => {
     return (
 
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="light" expand="lg"   >
                 <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
-                        <Nav.Link href="#link">Link</Nav.Link>
-                        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+
+                        <Link to="/" className='lnk'><h3>Home</h3></Link>
+                        <NavDropdown title="Transactions" id="basic-nav-dropdown" >
+                            <Link to ="/add-expense/"  className='lnk' >add expense </Link >
+                            <NavDropdown.Item href="#action/3.2">remove expense</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.3">add salary</NavDropdown.Item>
                             <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+                            <NavDropdown.Item href="#action/3.4">extra money</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                     <Form inline>
