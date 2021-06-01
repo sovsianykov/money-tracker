@@ -13,7 +13,7 @@ const NavbarMain = () => {
 
                         <Link to="/" className='lnk'><h3>Home</h3></Link>
                         <NavDropdown title="Transactions" id="basic-nav-dropdown" >
-                            <Link to ="/add-expense/"  className='lnk' >add expense </Link >
+                            <Link to ={"/add-expense/"}  className='lnk' >add expense </Link >
                             <NavDropdown.Item href="#action/3.2">remove expense</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3">add salary</NavDropdown.Item>
                             <NavDropdown.Divider />

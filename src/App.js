@@ -14,14 +14,13 @@ const MyLayout = Layout( PageContent,HeaderBar );
 function App() {
     return (
         <>
-
          <Router>
-             <Switch>
+
                 <Route path = '/' component={ MyLayout } />
-                <Route path = '/add-expense' component={ AddExpense } />
-             </Switch>
+                <Route path = "/add-expense/" component={ AddExpense }  />
+
          </Router>
-        </>
+            </>
     )
 
 }
