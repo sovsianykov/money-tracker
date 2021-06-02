@@ -1,3 +1,9 @@
 export const GET_CURRENCY_RATE ='GET_CURRENCY_RATE';
 export const GET_CURRENCY_NOW ='GET_CURRENCY_NOW';
 export const ADD_NEW_EXPENSE ='ADD_NEW_EXPENSE';
+export const FORM = {
+    NAME : 'FORM.NAME',
+    COST :  'FORM.COST',
+    ITEM :   'FORM.ITEM',
+    CATEGORY: 'FORM.CATEGORY'
+}
