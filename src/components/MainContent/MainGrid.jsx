@@ -1,14 +1,17 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Row, Col} from "react-bootstrap";
 import './mainContent.scss'
 import FilterWrapper from "./FilterWrapper";
 import GridTitle from "../GridTitle";
 import ExpenseList from "./Expense-list";
 import ExpenseItem from "./ExpenseItem";
-import {expenses} from "../../Content/content";
+// import {expenses} from "../../Content/content";
 import {Button} from "bootstrap";
+import {useSelector} from "react-redux";
+
 
 const MainGrid = () => {
+    const expenses = useSelector(state => state.myReducer.expenses)
     return (
         <div className='main-grid'>
             <Row>

@@ -1,7 +1,7 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect } from "react";
-import {fetchRate} from "../redux/actions";
+import {fetchRate} from "../../redux/actions";
 
 const ExchangeRate = () => {
     const dispatch = useDispatch();
@@ -13,7 +13,7 @@ const ExchangeRate = () => {
     return (
         <div className='er-container'>
             <div className="digits">
-                 UAH exchange rate -
+                 UAH exchange rate - {rate}
             </div>
         </div>
     );
