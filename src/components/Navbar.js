@@ -2,6 +2,7 @@ import React from 'react';
 import {Navbar, Nav, NavDropdown, FormControl, Button, Form, NavLink} from "react-bootstrap";
 import './styles.scss'
 import { Link } from  "react-router-dom"
+import ExchangeRate from "./ExchangeRate/ExchangeRate";
 const NavbarMain = () => {
     return (
 
@@ -20,10 +21,8 @@ const NavbarMain = () => {
                             <NavDropdown.Item href="#action/3.4">extra money</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
-                    <Form inline>
-                        <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                        <Button variant="outline-success">Search</Button>
-                    </Form>
+
+                   <ExchangeRate/>
                 </Navbar.Collapse>
             </Navbar>
     );

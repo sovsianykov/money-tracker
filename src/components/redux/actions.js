@@ -1,18 +1,21 @@
 import { ajax } from 'rxjs/ajax';
 import {mergeMap,map} from "rxjs/operators";
-import {ofType } from "redux-observable"
-import {GET_CURRENCY_RATE,GET_CURRENCY_FILLED} from "./types";
+import { ofType } from "redux-observable"
+import {GET_CURRENCY_RATE,GET_CURRENCY_NOW} from "./types";
 
 
-const fetchRate = date => ({ type: GET_CURRENCY_RATE, payload: date });
-const fetchRateFilled = payload => ({ type: GET_CURRENCY_FILLED, payload });
+export const fetchRate = date => ({ type: GET_CURRENCY_RATE, payload: date });
+const fetchRateNow = payload => ({ type: GET_CURRENCY_NOW, payload });
 
 
-const fetchRateEpic = action$ => action$.pipe(
+export const fetchRateEpic = action$ => action$.pipe(
     ofType(GET_CURRENCY_RATE),
     mergeMap(action =>
-        ajax.getJSON(`https://api.privatbank.ua/p24api/exchange_rates?json&date=${action.payload}`).pipe(
-            map(response =>fetchRateFilled(response))
+        ajax.getJSON(`https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?date=${action.payload}&json`).pipe(
+            map(response =>fetchRateNow(response[26].rate))
+
         )
     )
 );
+
+

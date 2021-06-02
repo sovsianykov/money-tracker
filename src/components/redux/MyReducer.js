@@ -1,12 +1,12 @@
-import {GET_CURRENCY_RATE} from "./types";
+import { GET_CURRENCY_NOW } from "./types";
 
 
 const initialState = {
-    rate : 28
+    rate : []
 }
-export  const reducer = (state = initialState, action) =>{
+export  const myReducer = (state = initialState, action) =>{
     switch (action.type) {
-        case GET_CURRENCY_RATE :
+        case GET_CURRENCY_NOW :
             return {
                 ...state, rate: action.payload
             } ;
