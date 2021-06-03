@@ -26,8 +26,8 @@ const MainGrid = () => {
                     <FilterWrapper/>
                     <div className="box">
                         <ExpenseList>
-                            { expenses ? expenses.map(exp => (
-                                <ExpenseItem key={exp.id} exp={exp} />
+                            { expenses ? expenses.map((exp,i) => (
+                                <ExpenseItem key={i} exp={exp} />
                             )) : ''}
                         </ExpenseList>
                     </div>
