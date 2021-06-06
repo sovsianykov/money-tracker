@@ -1,7 +1,7 @@
 import { ajax } from 'rxjs/ajax';
 import {mergeMap,map} from "rxjs/operators";
 import { ofType } from "redux-observable"
-import {GET_CURRENCY_RATE, GET_CURRENCY_NOW, ADD_NEW_EXPENSE, FORM} from "./types";
+import { GET_CURRENCY_RATE, GET_CURRENCY_NOW, ADD_NEW_EXPENSE, FORM ,REMOVE_EXPENSE}  from "./types";
 
 
 export const fetchRate = date => ({ type: GET_CURRENCY_RATE, payload: date });
@@ -20,6 +20,9 @@ export const fetchRateEpic = action$ => action$.pipe(
 
 export function addExpense(expense) {
     return ({type : ADD_NEW_EXPENSE , payload: expense})
+}
+export function removeExpense(id) {
+    return ({type : REMOVE_EXPENSE , payload: id})
 }
 
 export function addName(name) {

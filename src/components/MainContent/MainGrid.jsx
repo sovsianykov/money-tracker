@@ -27,7 +27,7 @@ const MainGrid = () => {
                     <div className="box">
                         <ExpenseList>
                             { expenses ? expenses.map((exp,i) => (
-                                <ExpenseItem key={i} exp={exp} />
+                                <ExpenseItem key={i}  exp={exp} />
                             )) : ''}
                         </ExpenseList>
                     </div>

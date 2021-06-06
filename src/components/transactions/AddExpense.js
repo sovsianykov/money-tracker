@@ -15,8 +15,8 @@ const AddExpense = () => {
   const item = useSelector((state) => state.myReducer.item);
   const cost = useSelector((state) => state.myReducer.cost);
   const category = useSelector((state) => state.myReducer.category);
-  const handleSubmit = () => {
-    let id = `${name}+${item}`;
+  const handleSubmit = useCallback(() => {
+    let id = `${name}+${item}+${Date.now()}`;
     let newExpense = {
       id: id,
       name: name,
@@ -26,7 +26,7 @@ const AddExpense = () => {
     };
 
     dispatch(addExpense(newExpense));
-  };
+  },[category, cost, dispatch, item, name]);
 
   return (
     <div className="add-expense-container">
@@ -42,16 +42,20 @@ const AddExpense = () => {
           onChange={(e) => dispatch(addItem(e.target.value))}
         />
         <input
-            type="text"
-            placeholder="cost"
-            onChange={(e) => dispatch(addCost(e.target.value))}
-        />
-        <input
           type="text"
-          placeholder="category"
-          onChange={(e) => dispatch(addCategory(e.target.value))}
+          placeholder="cost"
+          onChange={(e) => dispatch(addCost(e.target.value))}
         />
-
+        <select className='select'
+          name="s1"
+          onChange={(e) => dispatch(addCategory(e.target.value))}
+        >
+          <option value="wear">wear</option>
+          <option value="meal">meal</option>
+          <option value="transport">transport</option>
+          <option value="education">education</option>
+          <option value="home">home</option>
+        </select>
       </form>
       <Button className=" btn btn-success" onClick={handleSubmit}>
         Add Expense
