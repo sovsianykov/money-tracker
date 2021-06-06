@@ -46,10 +46,11 @@ const AddExpense = () => {
           placeholder="cost"
           onChange={(e) => dispatch(addCost(e.target.value))}
         />
-        <select className='select'
+        <select className='select filter-input'
           name="s1"
           onChange={(e) => dispatch(addCategory(e.target.value))}
         >
+          <option value="select">select </option>
           <option value="wear">wear</option>
           <option value="meal">meal</option>
           <option value="transport">transport</option>

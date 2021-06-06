@@ -6,7 +6,8 @@
  text-decoration: none;
  height: 30px;
  line-height: 30px;
- color: #0c0e0c;
+ font-weight: 200;
+ color: #646564;
  transition: .5s ease-in-out;
  display: block;
  padding: 0 20px;
@@ -36,6 +37,11 @@
    width: 150px;
    height: 30px;
    margin: 5px;
-   padding: 5px;
+   padding: 5px 10px;
+   line-height: 30px;
+   font-size: 18px;
+   border: 1px solid #ddd;
+   border-radius: 3px;
+
   }
 }

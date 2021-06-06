@@ -8,7 +8,7 @@ const ExpenseItem = ({exp}) => {
    const  removeHandler = () =>{
         dispatch(removeExpense(exp.id))
    }
-    console.log(exp.id)
+
     return (
         <div className='expense-item' onClick={removeHandler }>
             <FileMinus className='remove' />

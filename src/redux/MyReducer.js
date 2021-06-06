@@ -1,4 +1,4 @@
-import {ADD_NEW_EXPENSE, GET_CURRENCY_NOW, FORM, REMOVE_EXPENSE, CATEGORY_FILTER} from "./types";
+import {ADD_NEW_EXPENSE, GET_CURRENCY_NOW, FORM, REMOVE_EXPENSE, CATEGORY_FILTER, ALL_EXPENSES_SUM} from "./types";
 
 
 
@@ -9,7 +9,10 @@ const initialState = {
     cost : '',
     category :'',
     expenses : [],
-    categorised : []
+    allExpensesSum : 0,
+    categorised : [],
+    allCategoriesSum : 0,
+
 }
 export  const myReducer = (state = initialState, action) =>{
     switch (action.type) {
@@ -17,13 +20,23 @@ export  const myReducer = (state = initialState, action) =>{
             return {
                 ...state, rate: action.payload
             }
+        case ALL_EXPENSES_SUM :
+            return {
+                ...state,   allExpensesSum : state.expenses.reduce(function (sum,exp) {
+                    return sum + Number(exp.cost)
+                },0 )
+            }
         case ADD_NEW_EXPENSE :
             return  {
                 ...state,expenses: state.expenses.concat([action.payload])
+
             }
         case REMOVE_EXPENSE :
             return  {
-                ...state,expenses: state.expenses.filter(i => i.id !== action.payload )
+                ...state,expenses: state.expenses.filter(i => i.id !== action.payload ),
+                allExpensesSum : state.expenses.reduce(function (sum,exp) {
+                    return sum - Number(exp.cost)
+                },0 )
             }
         case CATEGORY_FILTER :
             return  {
