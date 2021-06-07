@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import {Row, Col} from "react-bootstrap";
 import './mainContent.scss'
 import FilterWrapper from "./FilterWrapper";
@@ -9,6 +9,7 @@ import ExpenseItem from "./ExpenseItem";
 import { useDispatch, useSelector } from "react-redux";
 import {allSum, filterByParam} from "../../redux/actions";
 import FilteredItem from "./FilteredItem";
+import TotalSum from "./TotalSum";
 
 
 const MainGrid = () => {
@@ -17,6 +18,12 @@ const MainGrid = () => {
     const expenses = useSelector(state => state.myReducer.expenses)
     const categorised = useSelector(state => state.myReducer.categorised)
     const allS = useSelector(state => state.myReducer.allExpensesSum)
+    useEffect(()=>{
+        dispatch(allSum())
+    },[dispatch])
+    const allSumHandler = useCallback(()=>{
+        dispatch(allSum())
+    },[dispatch])
     return (
         <div className='main-grid'>
             <Row>
@@ -34,6 +41,7 @@ const MainGrid = () => {
                             )) : ''}
                         </ExpenseList>
                     </div>
+                    <TotalSum  onClick={allSumHandler}>{allS}</TotalSum>
                 </Col>
                 <Col  md={4} sm={4}>
                     <GridTitle>filtered by category</GridTitle>

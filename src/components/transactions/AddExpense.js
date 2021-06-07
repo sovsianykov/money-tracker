@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback } from "react";
 import { Button } from "react-bootstrap";
 import {
   addCategory,
@@ -8,6 +8,7 @@ import {
   addName,
 } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
+import '../styles.scss'
 
 const AddExpense = () => {
   const dispatch = useDispatch();
@@ -46,7 +47,7 @@ const AddExpense = () => {
           placeholder="cost"
           onChange={(e) => dispatch(addCost(e.target.value))}
         />
-        <select className='select filter-input'
+        <select className='select filter-input' style={{padding : '0 5px'}}
           name="s1"
           onChange={(e) => dispatch(addCategory(e.target.value))}
         >

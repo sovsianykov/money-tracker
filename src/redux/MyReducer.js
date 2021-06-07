@@ -28,15 +28,15 @@ export  const myReducer = (state = initialState, action) =>{
             }
         case ADD_NEW_EXPENSE :
             return  {
-                ...state,expenses: state.expenses.concat([action.payload])
+                ...state,expenses: state.expenses.concat([action.payload]),
 
             }
         case REMOVE_EXPENSE :
             return  {
                 ...state,expenses: state.expenses.filter(i => i.id !== action.payload ),
-                allExpensesSum : state.expenses.reduce(function (sum,exp) {
-                    return sum - Number(exp.cost)
-                },0 )
+                // allExpensesSum : state.expenses.reduce(function (sum,exp) {
+                //     return sum - Number(exp.cost)
+                // },0 )
             }
         case CATEGORY_FILTER :
             return  {
