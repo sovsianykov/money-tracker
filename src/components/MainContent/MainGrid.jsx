@@ -32,12 +32,12 @@ const MainGrid = () => {
     return (
         <div className='main-grid'>
             <Row>
-                <Col  md={1} sm={1}>
+                <Col xs={12} md={1} sm={12}>
                     <GridTitle>salary</GridTitle>
                     <div className="box">
                     </div>
                 </Col>
-                <Col  md={4} sm={4} >
+                <Col xs={12} md={4} sm={12} >
                     <GridTitle>all expenses</GridTitle>
                     <div className="box">
                         <ExpenseList>
@@ -48,7 +48,7 @@ const MainGrid = () => {
                     </div>
                     <TotalSum  onClick={allSumHandler}>{allS}</TotalSum>
                 </Col>
-                <Col  md={4} sm={4}>
+                <Col xs={12} md={4} sm={12}>
                     <GridTitle>filtered by category</GridTitle>
                     <FilterWrapper onChange={e => dispatch(filterByParam(e.target.value))}/>
                     <div className="box categorized">
@@ -60,7 +60,7 @@ const MainGrid = () => {
                     </div>
                     <TotalSum  onClick={categorySumHandler}>{categoryS}</TotalSum>
                 </Col>
-                <Col  md={3}>
+                <Col xs={12}  md={3} sm={12}>
                     <GridTitle>utility</GridTitle>
                     <div className="box">
                     </div>
