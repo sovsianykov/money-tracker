@@ -4,6 +4,7 @@ export const ADD_NEW_EXPENSE ='ADD_NEW_EXPENSE';
 export const REMOVE_EXPENSE ='REMOVE_EXPENSE';
 export const CATEGORY_FILTER = 'CATEGORY_FILTER';
 export const ALL_EXPENSES_SUM = 'ALL_EXPENSES_SUM';
+export const ALL_CATEGORY_SUM = 'ALL_CATEGORY_SUM';
 
 export const FORM = {
     NAME : 'FORM.NAME',

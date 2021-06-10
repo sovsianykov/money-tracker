@@ -7,7 +7,7 @@ import ExpenseList from "./Expense-list";
 import ExpenseItem from "./ExpenseItem";
 
 import { useDispatch, useSelector } from "react-redux";
-import {allSum, filterByParam} from "../../redux/actions";
+import {allCategorySum, allSum, filterByParam} from "../../redux/actions";
 import FilteredItem from "./FilteredItem";
 import TotalSum from "./TotalSum";
 
@@ -18,11 +18,16 @@ const MainGrid = () => {
     const expenses = useSelector(state => state.myReducer.expenses)
     const categorised = useSelector(state => state.myReducer.categorised)
     const allS = useSelector(state => state.myReducer.allExpensesSum)
+    const categoryS = useSelector(state => state.myReducer.allCategorySum)
     useEffect(()=>{
-        dispatch(allSum())
+        dispatch(allSum());
+        dispatch(allCategorySum())
     },[dispatch])
     const allSumHandler = useCallback(()=>{
         dispatch(allSum())
+    },[dispatch])
+    const categorySumHandler = useCallback(()=>{
+        dispatch(allCategorySum())
     },[dispatch])
     return (
         <div className='main-grid'>
@@ -53,6 +58,7 @@ const MainGrid = () => {
                         )) : ''}
                     </ExpenseList>
                     </div>
+                    <TotalSum  onClick={categorySumHandler}>{categoryS}</TotalSum>
                 </Col>
                 <Col  md={3}>
                     <GridTitle>utility</GridTitle>

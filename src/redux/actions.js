@@ -8,7 +8,7 @@ import {
     FORM,
     REMOVE_EXPENSE,
     CATEGORY_FILTER,
-    ALL_EXPENSES_SUM
+    ALL_EXPENSES_SUM, ALL_CATEGORY_SUM
 } from "./types";
 
 
@@ -31,6 +31,9 @@ export function addExpense(expense) {
 }
 export function allSum() {
     return ({type : ALL_EXPENSES_SUM , payload: ''})
+}
+export function allCategorySum() {
+    return ({type : ALL_CATEGORY_SUM , payload: ''})
 }
 export function removeExpense(id) {
     return ({type : REMOVE_EXPENSE , payload: id})
