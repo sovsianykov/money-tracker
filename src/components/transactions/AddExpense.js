@@ -9,6 +9,7 @@ import {
 } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import '../styles.scss'
+import {Link} from "react-router-dom";
 
 const AddExpense = () => {
   const dispatch = useDispatch();
@@ -31,6 +32,7 @@ const AddExpense = () => {
 
   return (
     <div className="add-expense-container">
+
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -59,9 +61,10 @@ const AddExpense = () => {
           <option value="home">home</option>
         </select>
       </form>
-      <Button className=" btn btn-success" onClick={handleSubmit}>
+      <Button className="btn-success btn-exp" onClick={handleSubmit}>
         Add Expense
       </Button>
+      <Link to ={"/"} ><Button className='btn-close close'/></Link >
     </div>
   );
 };
